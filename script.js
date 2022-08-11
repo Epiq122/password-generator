@@ -1,6 +1,7 @@
 const showPasswordEl = document.querySelector('#show-password');
 const showPasswordEl2 = document.querySelector('#show-password2');
-
+const passwordBtn = document.querySelector('#generate-btn');
+console.log(passwordBtn);
 const characters = [
   'A',
   'B',
@@ -97,13 +98,16 @@ const characters = [
 
 function randomPassword() {
   let password = '';
-  for (let i = 0; i < 15; i++) {
+  let password2 = '';
+  for (let i = 0; i < 15; i += 1) {
     const randomNumber = Math.floor(Math.random() * characters.length);
-    const randomChar = characters[randomNumber];
-    password += randomChar;
-  }
-  return password;
-}
+    const randomNumber2 = Math.floor(Math.random() * characters.length);
 
-showPasswordEl.textContent = randomPassword();
-showPasswordEl2.textContent = randomPassword();
+    const randomChar = characters[randomNumber];
+    const randomChar2 = characters[randomNumber2];
+    password += randomChar;
+    password2 += randomChar2;
+    showPasswordEl.textContent = password;
+    showPasswordEl2.textContent = password2;
+  }
+}
